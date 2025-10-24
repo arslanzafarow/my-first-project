@@ -1,52 +1,21 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Home from "./pages/Home";
-import ProductPage from "./pages/ProductPage";
-import Cart from "./pages/Cart";
-import Checkout from "./pages/Checkout";
-import Login from "./pages/Login";
+import Hero from "./components/Hero.jsx";
+import About from "./components/About.jsx";
+import Services from "./components/Services.jsx";
+import Gallery from "./components/Gallery.jsx";
+import Contact from "./components/Contact.jsx";
 
-import { CartProvider } from "./context/CartContext";
-import { AuthProvider, useAuth } from "./context/AuthContext";
-import { FavoritesProvider } from "./context/FavoritesContext";
-
-import MainLayout from "./layout/MainLayout";
-
-function PrivateRoute({ children }) {
-  const { isAuthenticated } = useAuth();
-  return isAuthenticated ? children : <Navigate to="/login" replace />;
-}
+import "./styles/globals.css";
 
 function App() {
   return (
-    <AuthProvider>
-      <CartProvider>
-        <FavoritesProvider>
-          <BrowserRouter>
-            <Routes>
-              {/* публичная страница логина */}
-              <Route path="/login" element={<Login />} />
-
-              {/* приватные маршруты, рендерятся внутри MainLayout через Outlet */}
-              <Route
-                path="/"
-                element={
-                  <PrivateRoute>
-                    <MainLayout />
-                  </PrivateRoute>
-                }
-              >
-                <Route index element={<Home />} />
-                <Route path="product/:id" element={<ProductPage />} />
-                <Route path="cart" element={<Cart />} />
-                <Route path="checkout" element={<Checkout />} />
-              </Route>
-
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-          </BrowserRouter>
-        </FavoritesProvider>
-      </CartProvider>
-    </AuthProvider>
+     
+    <>
+      <Hero />
+      <About />
+      <Services />
+      <Gallery />
+      <Contact />
+    </>
   );
 }
 
@@ -56,9 +25,8 @@ export default App;
 
 
 
-
-
-
+        
+//vh-современный метод адаптации
 //Категория	Примеры классов	Описание
 
 //Layout / Flex / Grid	flex, grid, items-center, justify-between, 
