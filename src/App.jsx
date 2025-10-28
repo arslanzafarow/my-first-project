@@ -4,7 +4,7 @@ import Services from "./components/Services.jsx";
 import Gallery from "./components/Gallery.jsx";
 import Contact from "./components/Contact.jsx";
 
-import "./styles/globals.css";
+import "./index.css";
 
 function App() {
   return (
@@ -24,7 +24,8 @@ export default App;
 
 
 
-        
+
+ 
 //vh-современный метод адаптации
 //Категория	Примеры классов	Описание
 

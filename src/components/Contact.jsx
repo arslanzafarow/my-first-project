@@ -1,4 +1,3 @@
-// src/components/Contact.jsx
 import React from "react";
 import companyImage from "../images/company.png";
 import linksImage from "../images/links.png";
@@ -8,174 +7,31 @@ import socialsImage from "../images/socials.png";
 export default function Contact() {
   return (
     <div>
-      {/* Верхняя панель (Newsletter Signup) */}
-      <section
-        style={{
-          width: "100%",
-          height: "100px",
-          backgroundColor: "#171819",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "30px",
-        }}
-      >
-        {/* Заголовок */}
-        <div
-          style={{
-            width: "216px",
-            height: "30px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontFamily: "Open Sans, sans-serif",
-            fontWeight: 700,
-            fontSize: "22px",
-            lineHeight: "100%",
-            letterSpacing: "0.85px",
-            color: "#FFFFFF",
-          }}
-        >
+      <section className="w-full h-[100px] bg-[#171819] flex items-center justify-center gap-7.5">
+        <div className="w-[216px] h-[30px] flex items-center justify-center font-sans font-bold text-[22px] leading-[100%] tracking-[0.85px] text-white">
           Newsletter Signup
         </div>
-
-        {/* Поле + кнопка */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
+        <div className="flex items-center">
           <input
             type="email"
             placeholder="Enter your email"
-            style={{
-              width: "250px",
-              height: "40px",
-              border: "1px solid #979797",
-              backgroundColor: "#FFFFFF",
-              color: "#000000",
-              fontFamily: "Open Sans, sans-serif",
-              fontSize: "14px",
-              padding: "0 12px",
-              outline: "none",
-              transition: "border-color 0.3s ease, box-shadow 0.3s ease",
-              borderRight: "none",
-              borderRadius: "4px 0 0 4px",
-            }}
-            onMouseOver={(e) => {
-              e.target.style.borderColor = "#00A4E5";
-              e.target.style.boxShadow = "0 0 5px rgba(0, 164, 229, 0.5)";
-            }}
-            onMouseOut={(e) => {
-              e.target.style.borderColor = "#979797";
-              e.target.style.boxShadow = "none";
-            }}
+            className="w-[250px] h-[40px] border border-[#979797] border-r-0 rounded-l-md px-3 font-sans text-[14px] text-black outline-none transition-all duration-300 focus:border-[#00A4E5] focus:shadow-[0_0_5px_rgba(0,164,229,0.5)]"
           />
-
-          <button
-            style={{
-              width: "150px",
-              height: "40px",
-              backgroundColor: "#00A4E5",
-              border: "1px solid #00A4E5",
-              color: "#FFFFFF",
-              fontFamily: "Open Sans, sans-serif",
-              fontWeight: 700,
-              fontSize: "13px",
-              lineHeight: "100%",
-              letterSpacing: "0.5px",
-              textAlign: "center",
-              cursor: "pointer",
-              borderRadius: "0 4px 4px 0",
-              transition: "background-color 0.3s ease",
-            }}
-            onMouseOver={(e) => (e.target.style.backgroundColor = "#008AC2")}
-            onMouseOut={(e) => (e.target.style.backgroundColor = "#00A4E5")}
-          >
+          <button className="w-[150px] h-[40px] bg-[#00A4E5] border border-[#00A4E5] text-white font-sans font-bold text-[13px] leading-[100%] tracking-[0.5px] rounded-r-md cursor-pointer transition-colors duration-300 hover:bg-[#008AC2]">
             SIGNUP
           </button>
         </div>
       </section>
 
-      {/* Средняя панель (Footer content) */}
-      <section
-        style={{
-          width: "100%",
-          height: "240px",
-          backgroundColor: "#141A20",
-          position: "relative",
-          opacity: 1,
-        }}
-      >
-        <img
-          src={companyImage}
-          alt="Company"
-          style={{
-            position: "absolute",
-            width: "250px",
-            height: "148px",
-            top: "42px",
-            left: "249px",
-          }}
-        />
-        <img
-          src={linksImage}
-          alt="Links"
-          style={{
-            position: "absolute",
-            width: "262px",
-            height: "150px",
-            top: "42px",
-            left: "570px",
-          }}
-        />
-        <img
-          src={contactImage}
-          alt="Contact Info"
-          style={{
-            position: "absolute",
-            width: "141px",
-            height: "158px",
-            top: "42px",
-            left: "890px",
-          }}
-        />
-        <img
-          src={socialsImage}
-          alt="Social Links"
-          style={{
-            position: "absolute",
-            width: "87px",
-            height: "13px",
-            top: "72px",
-            left: "1077px",
-          }}
-        />
+      <section className="w-full h-[240px] bg-[#141A20] relative">
+        <img src={companyImage} alt="Company" className="absolute top-[42px] left-[249px] w-[250px] h-[148px]" />
+        <img src={linksImage} alt="Links" className="absolute top-[42px] left-[570px] w-[262px] h-[150px]" />
+        <img src={contactImage} alt="Contact Info" className="absolute top-[42px] left-[890px] w-[141px] h-[158px]" />
+        <img src={socialsImage} alt="Social Links" className="absolute top-[72px] left-[1077px] w-[87px] h-[13px]" />
       </section>
 
-      {/* Нижняя полоса (копирайт) */}
-      <section
-        style={{
-          width: "100%",
-          height: "60px",
-          backgroundColor: "#171819",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <p
-          style={{
-            fontFamily: "Open Sans, sans-serif",
-            fontWeight: 400,
-            fontSize: "11px",
-            lineHeight: "100%",
-            letterSpacing: "0.85px",
-            color: "#FFFFFF",
-            margin: 0,
-          }}
-        >
+      <section id="contact" className="w-full h-[60px] bg-[#171819] flex items-center justify-center">
+        <p className="font-sans font-normal text-[11px] leading-[100%] tracking-[0.85px] text-white m-0">
           © 2017 Konstruct Inc. Designed by Jane Kathryn Teo
         </p>
       </section>

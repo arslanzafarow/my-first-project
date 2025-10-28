@@ -1,4 +1,3 @@
-// src/components/Hero.jsx
 import React from "react";
 import bg from "../images/bg.jpg";
 import logo from "../images/projeco-logo.png";
@@ -6,97 +5,36 @@ import logo from "../images/projeco-logo.png";
 export default function Hero() {
   return (
     <section
+      id="hero"
+      className="relative w-full flex flex-col items-center justify-center overflow-hidden"
       style={{
         backgroundImage: `url(${bg})`,
-        width: "100%",
-        height: "53.5vw",
-        minHeight: "600px",
-        maxHeight: "900px",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        position: "relative",
-        overflow: "hidden",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
+        height: "53.5vw",
+        minHeight: "600px",
+        maxHeight: "900px",
       }}
     >
-      {/* 🔹 Логотип в самом верху */}
       <img
         src={logo}
         alt="KONSTUCT logo"
-        style={{
-          position: "absolute",
-          top: "40px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: "101.6px",
-          height: "23px",
-          opacity: 1,
-        }}
+        className="absolute top-10 left-1/2 transform -translate-x-1/2 w-[101.6px] h-[23px]"
       />
 
-      {/* 🔹 Основной контент по центру */}
-      <div
-        style={{
-          textAlign: "center",
-          color: "#ffffff",
-          marginTop: "2vw",
-        }}
-      >
-        <h1
-          style={{
-            fontFamily: "BebasNeueBold, sans-serif",
-            fontWeight: 400,
-            fontSize: "2.5vw", // примерно эквивалентно 60px при ширине 1440px
-            lineHeight: "100%",
-            letterSpacing: "0.4vw", // адаптивно к размеру шрифта
-            textAlign: "center",
-            verticalAlign: "bottom",
-            color: "#ffffff",
-            margin: 0,
-          }}
-        >
+      <div className="text-center text-white mt-[2vw]">
+        <h1 className="font-[BebasNeueBold] text-[2.5vw] leading-[100%] tracking-[0.4vw] m-0">
           PARTNER WITH KONSTUCT
         </h1>
-
-        <p
-          style={{
-            fontFamily: "OpenSans, sans-serif",
-            fontWeight: 600,
-            fontSize: "16px",
-            lineHeight: "100%",
-            letterSpacing: "0px",
-            textAlign: "center",
-            verticalAlign: "bottom",
-            color: "#ffffff",
-            marginTop: "8px",
-          }}
-        >
+        <p className="font-sans font-semibold text-[16px] leading-[100%] mt-2">
           An award-winning construction management firm
         </p>
-
-        <p
-          style={{
-            fontFamily: "OpenSans, sans-serif",
-            fontWeight: 600,
-            fontSize: "clamp(9px, 0.8vw, 11px)",
-            lineHeight: "100%",
-            letterSpacing: "3.7px",
-            textAlign: "center",
-            verticalAlign: "bottom",
-            color: "#ffffff",
-            position: "absolute",
-            bottom: "40px",
-            left: "50%",
-            transform: "translateX(-50%)",
-          }}
-        >
-          SCROLL DOWN
-        </p>
       </div>
+
+      <p className="font-sans font-semibold text-[clamp(9px,0.8vw,11px)] tracking-[3.7px] absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white">
+        SCROLL DOWN
+      </p>
     </section>
   );
 }
